@@ -1,0 +1,50 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+proxies:
+- name: 🇦🇪 阿联酋 (UAE) 01 - xiaohe
+  type: vless
+  server: 80.240.18.227
+  port: 10051
+  uuid: 73996ef7-544c-45e7-abc0-973218c727e2
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev
+- name: 🇦🇪 阿联酋 (UAE) 02 - xiaohe
+  type: vless
+  server: 116.204.164.30
+  port: 7443
+  uuid: d5f29a64-da5d-4f99-b3c4-ae92cc39ad5f
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev
+proxy-groups:
+- name: PROXIES
+  type: select
+  proxies:
+  - AUTO
+  - 🇦🇪 阿联酋 (UAE) 01 - xiaohe
+  - 🇦🇪 阿联酋 (UAE) 02 - xiaohe
+- name: AUTO
+  type: url-test
+  url: https://www.google.com/generate_204
+  interval: 300
+  proxies:
+  - 🇦🇪 阿联酋 (UAE) 01 - xiaohe
+  - 🇦🇪 阿联酋 (UAE) 02 - xiaohe
+rules:
+- MATCH,PROXIES
