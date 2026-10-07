@@ -6,6 +6,34 @@ log-level: info
 proxies:
 - name: 🇨🇿 CZ 01 - xiaohe
   type: vless
+  server: 022xw1dmczg0c6165pcla6.tomborn69.workers.dev
+  port: 443
+  uuid: 5d4f5139-6965-42ed-8dba-fe3ef9fed7c1
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: 022xW1dMCzG0c6165PCla6.TOMBorn69.woRKERS.dev
+  network: ws
+  ws-opts:
+    path: /vl/fw89i0TpKDRV7i25w2uWIf?ed=2560
+    headers:
+      Host: 022xw1dmczg0c6165pcla6.tomborn69.workers.dev
+- name: 🇨🇿 CZ 02 - xiaohe
+  type: vless
+  server: 172.67.214.25
+  port: 2053
+  uuid: ef23616d-8a9d-4b22-b2f5-9bda864de179
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: INDEX.Arcane509.Workers.DEV
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: index.arcane509.workers.dev
+- name: 🇨🇿 CZ 03 - xiaohe
+  type: vless
   server: 95.182.95.178
   port: 443
   uuid: d342d11e-d224-4463-b982-532309285094
@@ -18,7 +46,7 @@ proxies:
     path: /fp
     headers:
       Host: ccc.010304.xyz
-- name: 🇨🇿 CZ 02 - xiaohe
+- name: 🇨🇿 CZ 04 - xiaohe
   type: vless
   server: 95.182.95.178
   port: 443
@@ -39,6 +67,8 @@ proxy-groups:
   - AUTO
   - 🇨🇿 CZ 01 - xiaohe
   - 🇨🇿 CZ 02 - xiaohe
+  - 🇨🇿 CZ 03 - xiaohe
+  - 🇨🇿 CZ 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -46,5 +76,7 @@ proxy-groups:
   proxies:
   - 🇨🇿 CZ 01 - xiaohe
   - 🇨🇿 CZ 02 - xiaohe
+  - 🇨🇿 CZ 03 - xiaohe
+  - 🇨🇿 CZ 04 - xiaohe
 rules:
 - MATCH,PROXIES
